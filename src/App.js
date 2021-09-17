@@ -4,22 +4,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Components/Navbar/Navbar';
 import countries from './countries.json';
 import CountriesLists from './Components/CountriesList/CountriesList';
-import Test from './Components/CountryDetails/Test'
+import Test from './Components/CountryDetails/Test';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-            <Navbar />
-           
-            
-                  <div className="container">
+        <Navbar />
+
+        <div className="container">
           <div className="row">
-            {/* <Route path="/Countries"> */}
             <CountriesLists list={countries} />
-            {/*   </Route> */}
-            <Switch>  
-            <Route path="/countrydetails/:id" render={(props) => <Test {...props} x={countries} />} />
+
+            <Switch>
+              <Route
+                path="/countrydetails/:id"
+                render={(props) => <Test {...props} x={countries} />}
+              />
             </Switch>
           </div>
         </div>
